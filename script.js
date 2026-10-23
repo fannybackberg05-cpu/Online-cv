@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 2. Interactive 3D Tilt & Mouse-Glow Effect on Cards
+
     const cards = document.querySelectorAll('.interactive-card');
 
     cards.forEach(card => {
@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Smooth Fade-In Animation on Scroll
     const observerOptions = {
         threshold: 0.15
     };

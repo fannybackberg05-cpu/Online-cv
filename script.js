@@ -1,13 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    // 1. Language Toggle Button Logic (Switches back to Swedish when clicked)
-    const langBtn = document.getElementById('lang-btn');
-    langBtn.addEventListener('click', () => {
-        // Placeholder toggle action or alert if Swedish version isn't hosted separately yet
-        alert("Portfolio is currently displayed in English. (You can link back to a Swedish version or implement full multi-language translation here!)");
-    });
-
-    const cards = document.querySelectorAll('.interactive-card');
+ const cards = document.querySelectorAll('.interactive-card');
 
     cards.forEach(card => {
         const glow = card.querySelector('.glow-effect');

@@ -1,0 +1,475 @@
+/* ==========================================================================
+   Theme & Variables (Dark & Light Mode Foundation)
+   ========================================================================== */
+:root {
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --primary: #0284c7;
+    --primary-hover: #0369a1;
+    --border-color: rgba(226, 232, 240, 0.9);
+    --border-hover: rgba(2, 132, 199, 0.4);
+    --text-muted: #64748b;
+    --accent-color: #0284c7;
+    --quote-mark: rgba(2, 132, 199, 0.15);
+    --card-shadow: rgba(0, 0, 0, 0.05);
+}
+
+body.dark {
+    --bg-color: #0b0f19;
+    --text-color: #f8fafc;
+    --card-bg: rgba(17, 24, 39, 0.85);
+    --border-color: rgba(55, 65, 81, 0.6);
+    --border-hover: rgba(99, 102, 241, 0.5);
+    --text-muted: #94a3b8;
+    --accent-color: #6366f1;
+    --quote-mark: rgba(99, 102, 241, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.35);
+}
+
+/* Base Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #0284c7, #6366f1);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* Language Button Styling */
+.lang-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.2s ease;
+}
+
+.lang-btn:hover {
+    border-color: var(--primary);
+    background-color: rgba(2, 132, 199, 0.05);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #0284c7 0%, #6366f1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.badge {
+    background: rgba(2, 132, 199, 0.1);
+    color: var(--primary);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid var(--border-color);
+    display: inline-block;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-top: 1rem;
+    font-weight: 800;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-links {
+    margin-top: 1.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+}
+
+.contact-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--primary);
+    border-color: var(--border-hover);
+    background-color: rgba(2, 132, 199, 0.05);
+}
+
+
+.profile-img-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+    box-shadow: 0 8px 24px var(--card-shadow);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   Sections & Cards
+   ========================================================================== */
+.section {
+    padding: 4rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.cards-grid, .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.glow-effect {
+    display: none !important;
+}
+
+.card, .interactive-card, .skill-group {
+    position: relative;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.75rem;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    
+    transform: none !important;
+    transform-style: flat !important;
+    perspective: none !important;
+    
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    box-shadow: 0 4px 12px var(--card-shadow);
+}
+
+.card:hover, .interactive-card:hover, .skill-group:hover {
+    transform: translateY(-4px) !important;
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 24px var(--card-shadow);
+}
+
+.card h3, .skill-group h3 {
+    margin-bottom: 0.5rem;
+}
+
+.card ul {
+    padding-left: 1.2rem;
+}
+
+.card li {
+    margin-bottom: 0.5rem;
+}
+
+.company {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Education Section Custom Styling
+   ========================================================================== */
+#education .card {
+    border-left: 4px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+}
+
+#education .card h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+#education .card .company {
+    display: inline-block;
+    background: rgba(2, 132, 199, 0.08);
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    width: fit-content;
+}
+
+#education .card p:last-child {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Skills & Tags
+   ========================================================================== */
+@media (min-width: 768px) {
+    .skill-group.full-width {
+        grid-column: 1 / -1;
+    }
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background: rgba(2, 132, 199, 0.08);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   References Section
+   ========================================================================== */
+.references-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reference-card {
+    padding: 2.5rem;
+}
+
+.reference-quote {
+    position: relative;
+    font-style: italic;
+    font-size: 1.025rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin: 0 0 2rem 0;
+    padding-left: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.reference-author {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+}
+
+.author-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+}
+
+.author-img-small {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    flex-shrink: 0;
+}
+
+.author-header h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.reference-author .title {
+    margin: 0 0 0.35rem 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.reference-author .relation {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Scroll Animations & Footer
+   ========================================================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   About Me & Image Gallery
+   ========================================================================== */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.about-content p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.hamburger-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 640px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .reference-card {
+        padding: 1.5rem;
+    }
+
+    .reference-quote {
+        padding-left: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .hamburger-btn {
+        display: block; 
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 0;
+        box-shadow: 0 4px 12px var(--card-shadow);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 0.75rem 1.5rem;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+}

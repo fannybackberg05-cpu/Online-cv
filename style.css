@@ -80,26 +80,6 @@ body {
     color: var(--primary);
 }
 
-/* Language Button Styling */
-.lang-btn {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--border-color);
-    background: var(--card-bg);
-    color: var(--text-color);
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.2s ease;
-}
-
-.lang-btn:hover {
-    border-color: var(--primary);
-    background-color: rgba(2, 132, 199, 0.05);
-    transform: translateY(-1px);
-}
 
 /* ==========================================================================
    Hero Section
